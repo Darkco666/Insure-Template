@@ -2,12 +2,6 @@
 
 ![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)
 
-## Welcome! 👋
-
-Thanks for seeing my Template
-
-[Frontend Mentor](https://www.frontendmentor.io)
-
 ## The challenge
 
 Your challenge is to build out this landing page and get it looking as close to the design as possible.
@@ -19,4 +13,4 @@ Your users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+Thank you for taking the time to review my template.
