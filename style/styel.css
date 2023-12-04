@@ -1,0 +1,25 @@
+:root {
+    /* Colors */
+
+    /* Primary Colors*/
+    --p-color-1: hsl(256, 26%, 20%);
+    --p-color-2: hsl(216, 30%, 68%);
+
+    /* Natural Colors*/
+    --n-color-1: hsl(270, 9%, 17%);
+    --n-color-2: hsl(273, 4%, 51%);
+    --n-color-3: hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    font-family: 'DM Serif Display', serif;
+}
+
+.container {
+    padding-left: 120px;
+    padding-right: 120px;
+}
