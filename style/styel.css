@@ -31,6 +31,34 @@ body {
     }
 }
 
+.special-button {
+    padding: 8px 25px;
+    border: 2px solid var(--n-color-1);
+    position: relative;
+    text-align: center;
+
+    &::before {
+        content: '';
+        background-color: var(--n-color-3);
+        position: absolute;
+        height: 100%;
+        width: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+}
+
+.special-button:hover::before {
+    width: 100%;
+}
+
+/* Header  */
 .main-header .container {
     display: flex;
     justify-content: space-between;
@@ -71,34 +99,11 @@ body {
     color: var(--n-color-1);
 }
 
-.main-header nav ul li:last-child {
-    padding: 8px 25px;
-    border: 2px solid var(--n-color-1);
-    position: relative;
-    text-align: center;
-}
-
-.main-header nav ul li:last-child::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0;
-    left: 0;
-    bottom: 0;
+.main-header nav ul .special-button::before {
     background-color: var(--n-color-1);
-    z-index: -1;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
 }
 
-.main-header nav ul li:last-child:hover::before {
-    width: 100%;
-}
-
-.main-header nav ul li:nth-child(4) a {
+.main-header nav ul li:last-child a {
     color: var(--n-color-1);
 }
 
@@ -108,91 +113,92 @@ body {
 
 /* Header media */
 @media (max-width: 600px) {
-    .main-header .burger {
-        width: 30px;
-        height: 30px;
-        border: 2px solid var(--n-color-1);
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        cursor: pointer;
-    }
+    .main-header {
+        & .burger {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--n-color-1);
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            cursor: pointer;
 
-    .main-header .burger span {
-        width: 100%;
-        height: 2px;
-        background-color: var(--n-color-1);
-    }
-
-    .main-header .burger.click {
-        position: relative;
-
-        span {
-            position: absolute;
-            width: 60%;
-
-            &:first-child {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
+            & span {
+                width: 100%;
+                height: 2px;
+                background-color: var(--n-color-1);
             }
 
-            &:nth-child(2) {
-                display: none;
-            }
+            &.click {
+                position: relative;
 
-            &:last-child {
-                transform: rotate(-45deg);
-                -webkit-transform: rotate(-45deg);
-                -moz-transform: rotate(-45deg);
-                -ms-transform: rotate(-45deg);
-                -o-transform: rotate(-45deg);
+                span {
+                    position: absolute;
+                    width: 60%;
+
+                    &:first-child {
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        display: none;
+                    }
+
+                    &:last-child {
+                        transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                    }
+                }
             }
         }
-    }
 
-    .main-header nav {
-        display: none;
-        width: 100%;
-        height: calc(90vh - 70px);
-        background-color: var(--n-color-1);
-        background-image: url(../images/bg-pattern-mobile-nav.svg);
-        background-repeat: no-repeat;
-        background-position: bottom right;
-        background-size: contain;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        transform: translateY(100%);
-        -webkit-transform: translateY(100%);
-        -moz-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-        -o-transform: translateY(100%);
+        & nav {
+            display: none;
+            width: 100%;
+            height: calc(90vh - 70px);
+            background-color: var(--n-color-1);
+            background-image: url(../images/bg-pattern-mobile-nav.svg);
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: contain;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            -ms-transform: translateY(100%);
+            -o-transform: translateY(100%);    
 
-    }
+            & ul {
+                flex-direction: column;
+                gap: 30px;
 
-    .main-header nav ul {
-        flex-direction: column;
-        gap: 30px;
-    }
+                & li {
+                    margin: 0 !important;
+                    text-align: center;
 
-    .main-header nav ul li {
-        margin: 0 !important;
-        text-align: center;
-    }
+                    & a {
+                        color: var(--n-color-3) !important;
+                        font-size: 20px;
+                    }
 
-    .main-header nav ul li a {
-        color: var(--n-color-3) !important;
-        font-size: 20px;
-    }
-
-    .main-header nav ul li:not(:last-child):hover a {
-        color: var(--n-color-2) !important;
+                    &:not(:last-child):hover a {
+                        color: var(--n-color-2) !important;
+                    }
+                }
+            }
+        }
     }
 
     .main-header nav ul li:last-child {
@@ -214,4 +220,9 @@ body {
     .main-header nav ul li:last-child {
         width: 90%;
     }
+}
+
+/* Section One */
+main .sec-1 {
+    background-color: var(--p-color-1);
 }
